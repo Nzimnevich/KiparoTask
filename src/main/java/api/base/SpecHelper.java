@@ -7,6 +7,7 @@ import io.restassured.http.ContentType;
 import io.restassured.specification.RequestSpecification;
 import io.restassured.specification.ResponseSpecification;
 
+// Helper ;) check DataHelper comment
 public class SpecHelper {
     private static final String BASE_URI ="https://api2.kiparo.com/static/";
 
