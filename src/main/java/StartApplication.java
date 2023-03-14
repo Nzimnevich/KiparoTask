@@ -17,9 +17,13 @@ public class StartApplication {
         printInformation(sc, newsModel);
     }
 
+    //Похоже, что это метод делает слишком много
+    // нужно выделить работу меню в отдельный метод
+    // чтобы метода был Single responsible
     public static NewsModel downloadFile(Scanner scanner) {
         NewsModel newsModel = null;
         while (true) {
+            //  Все строки нужно выносить в константы
             System.out.println("Нажмите 1 что-бы скачать JSON, 2 - XML");
             if (scanner.hasNext()) {
                 answer = scanner.nextLine();
@@ -37,10 +41,14 @@ public class StartApplication {
         return newsModel;
     }
 
+    // Эти проксирующие методы лишние, только добавляют сложность в чтении, 
+    // потому что нужно идти еще куда-то
     public static NewsModel downloadFileFromJson() {
         return UploadNewsApiHelper.getNewsFromJsonFile();
     }
 
+     // Эти проксирующие методы лишние, только добавляют сложность в чтении, 
+    // потому что нужно идти еще куда-то
     public static NewsModel downloadFileFromXML() {
         return UploadNewsApiHelper.getNewsFromXMLFile();
     }
